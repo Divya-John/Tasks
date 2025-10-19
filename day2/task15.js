@@ -5,7 +5,7 @@ function reversed(str){
   for(i=0;i<newStr.length;i++){
     result.push(newStr[i].split("").reverse().join(""))
   }
-  return result.toString()
+  return result.toString().replace(/[,]/g," ")
 }
 console.log(reversed("Hello world"));
 console.log(reversed("Programmers are awesome"));

@@ -12,6 +12,9 @@ function sortArr(str){
       count[sortedArray[i]] = 1;
     }
   };
+  // for(let i of str){
+  //   count[i]=(count[i]||0)+1
+  // }
   return count
 }
 console.log(sortArr("hello"));
