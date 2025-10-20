@@ -1,91 +1,50 @@
-const ones = [
-  "",
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "ten",
-  "eleven",
-  "twelve",
-  "thirteen",
-  "fourteen",
-  "fifteen",
-  "sixteen",
-  "seventeen",
-  "eighteen",
-  "nineteen",
-];
-const tens = [
-  "",
-  "",
-  "twenty",
-  "thirty",
-  "forty",
-  "fifty",
-  "sixty",
-  "seventy",
-  "eighty",
-  "ninety",
-];
+const noTowords = {
+  0: "zero",
+  1: "one",
+  2: "two",
+  3: "three",
+  4: "four",
+  5: "five",
+  6: "six",
+  7: "seven",
+  8: "eight",
+  9: "nine",
+  10: "ten",
+  11: "eleven",
+  12: "twelve",
+  13: "thirteen",
+  14: "fourteen",
+  15: "fifteen",
+  16: "sixteen",
+  17: "seventeen",
+  18: "eighteen",
+  19: "nineteen",
+  20: "twenty",
+  30: "thirty",
+  40: "forty",
+  50: "fifty",
+  60: "sixty",
+  70: "seventy",
+  80: "eighty",
+  90: "ninety",
+};
 
-function numtext(num) {
-  let text = "";
-  if (num >= 100) {
-    text += ones[Math.floor(num / 100)] + "hundred";
-    num %= 100;
-    if (num > 0) {
-      text += "and";
-    }
+function noWords(n){
+  if (n in noTowords) return noTowords[n];
+  let text="";
+  if(n>=100){
+    text = text + noWords(Math.round(n / 100)) + " hundred";
+    n = n % 100;
   }
-  if (num > 0) {
-    if (num < 20) {
-      text += ones[num];
-    } else {
-      text += tens[Math.floor(num / 10)];
-      if (num % 10 > 0) {
-        text += " " + ones[num % 10];
-      }
+
+  if(n>20){
+    if(text!=="") text+=" and "
+    text = text + noWords(Math.round(n / 10)*10) ;
+    n = n % 10;
+    if(n%10>0){
+      text+=" "+noTowords[n%10]
     }
   }
   return text;
 }
-function numberToText(num) {
-  if (num === 0) {
-    return "zero";
-  }
-  if (num < 0) {
-    return "minus " + numberToText(-num);
-  }
-
-  const scales = ["", "thousand", "million", "billion"];
-  let text = "";
-  let scaleIndex = 0;
-
-  while (num > 0) {
-    const chunk = num % 1000;
-    if (chunk > 0) {
-      const chunkText = numtext(chunk);
-      if (text !== "") {
-        text = chunkText + " " + scales[scaleIndex] + " " + text;
-      } else {
-        text = chunkText + (scales[scaleIndex] ? " " + scales[scaleIndex] : "");
-      }
-    }
-    num = Math.floor(num / 1000);
-    scaleIndex++;
-  }
-
-  return text.trim();
-}
-console.log(numberToText(723));
-console.log(numberToText(42));
-console.log(numberToText(15));
-console.log(numberToText(100));
-console.log(numberToText(2000));
-console.log(numberToText(12345));
-console.log(numberToText(999999999));
+console.log(noWords(723));
