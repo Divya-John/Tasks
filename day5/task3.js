@@ -1,13 +1,15 @@
 // 1
-let num=5;
-let car = { model: "Hyryder", color: "blue" };
+// let num=5;
+// let car = { model: "Hyryder",color:"blue"};
 
-n=num;
-const newCar={...car,n}
-console.log(newCar);
-newCar.color="red"
-console.log(newCar);
-console.log(car);
+// let newnum=num;
+// let newcar=car;
+
+// num=20;
+// car.color="red"
+
+// console.log(newnum)
+// console.log(newcar)
 
 
 // 2
@@ -19,13 +21,15 @@ console.log(car);
 //   }
 // }
 // const newPerson = { ...person };
-// console.log(newPerson);
-// const newPerson1 = Object.assign(person);
-// console.log(newPerson1);
+// // console.log(newPerson);
+// const newPerson1 = Object.assign({},person);
+// // console.log(newPerson1);
 
-// newPerson.city.pincode=657389;
-// console.log(newPerson1);
+// person.name='Alice';
+// person.city.homecity = "Delhi";
 // console.log(person);
+// console.log(newPerson);
+// console.log(newPerson1);
 
 
 
@@ -45,6 +49,15 @@ console.log(car);
 // }
 // console.log(addItem(newArr,2))
 
+//or
+
+// function addItem(arr,item){
+//   return [...arr,item]
+// }
+// const array=[1,2,3]
+// const newArr = addItem(array, 4);
+// console.log(array)
+// console.log(newArr)
 
 
 // 5
@@ -64,3 +77,24 @@ console.log(car);
 // console.log(updateUser());
 // console.log(user1)
 // console.log(user2)
+
+
+
+// function updateUser(user){
+//   user.lastActive=new Date();
+//   return user;
+// }
+// const user1={name:"John",age:25}
+// updateUser(user1)
+// console.log(user1)
+
+// function updateUserImmutable(user){
+//   return{
+//     ...user,
+//     lastActive:new Date()
+//   }
+// }
+// const user2 = { name: "John", age: 25 };
+// const updateUser2 = updateUserImmutable(user2);
+// console.log(user2)
+// console.log(updateUser2)

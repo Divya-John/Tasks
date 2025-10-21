@@ -18,7 +18,6 @@
 // 3
 // function capitalize(sentence){
 //   let str = sentence.split(" ");
-//   console.log(str)
 //   let join=[]
 //   for(i=0;i<str.length;i++){
 //     const first =str[i].charAt(0).toUpperCase()
@@ -33,7 +32,6 @@
 // function reverseWords(sentence){
 //   let reversed=sentence.split(" ");
 //   let result=""
-//   console.log(reversed)
 //   for(i=0;i<sentence.length;i++){
 //    result = reversed.reverse();
 //   }
@@ -42,15 +40,15 @@
 // console.log(reverseWords("Hello world"));
 
 
-// 5
-function countVowels(str){
-  let count = 0;
-  for(i=0;i<str.length;i++){
-    let vowels='a,e,i,o,u'
-    if (vowels.includes(str[i])) {
-      count++;
-    }
-  }
-  return count;
-}
-console.log(countVowels('Hello world'));
+// // 5
+// function countVowels(str){
+//   let count = 0;
+//   for(i=0;i<str.length;i++){
+//     let vowels='a,e,i,o,u'
+//     if (vowels.includes(str[i])) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countVowels('Hello world'));

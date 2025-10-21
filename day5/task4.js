@@ -26,7 +26,6 @@
 // console.log(toBoolean(""));
 
 
-
 // 4
 // console.log('5'+2)
 // console.log('5'-2)
@@ -39,9 +38,14 @@
 
 
 // 5
-function removeFalse(arr){
-    return arr.filter((e)=>
-       ((e!=''&& e!=0&& e!=0&& e!==''&& e!=null&& e!=undefined&&e!=NaN))
-    )
-}
-console.log(removeFalse([1, 2, 3, 4, 5, '', 0,false]));
+// function removeFalse(arr){
+//     return arr.filter((e)=>
+//        ((e!=''&& e!=0&& e!=0&& e!==''&& e!=null&& e!=undefined&&e!=NaN))
+//     )
+// }
+// console.log(removeFalse([1, 2, 3, 4, 5, '', 0,false]));
+
+// function removeFalse(arr){
+//     return arr.filter(Boolean)
+// }
+// console.log(removeFalse([1, 2, 3, 4, 5, '', 0,false,NaN]));
