@@ -1,9 +1,15 @@
 function flattening(arr){
-  // if(arr.isArray===false){
-  //   return 1
-  // }
-  // else{
-
-  // }f
+  let newArr=[]
+  function flatten(arr){
+    for(item of arr){
+      if(Array.isArray(item)){
+        flatten(item)
+      }else{
+        newArr.push(item)
+      }
+    }
+    return newArr
+  }
+  return flatten(arr)
 }
 console.log(flattening([1, [2, [3, [4]], 5]]));

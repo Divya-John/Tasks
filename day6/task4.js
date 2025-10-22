@@ -1,8 +1,10 @@
-let str = fromCharCode(65);
-
 function pattern(n){
+  let str=[]
+  for(i=65;i<=90;i++){
+    str.push(i)
+  }
   for (i = 0; i < n; i++){
-    console.log(str[i].repeat(i+1))
+    console.log(String.fromCharCode(str[i]).repeat(i+1).split("").join(" "))
   }
 }
-console.log(pattern(5))
+pattern(5)
