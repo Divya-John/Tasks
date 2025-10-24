@@ -1,11 +1,17 @@
 "use strict";
-// const Students: { name: string; marks: number }[] = [
-//   { name: "Alice", marks: 42 },
-//   { name: "Bob", marks: 67 },
-//   { name: "Charlie", marks: 35 }
-// ];
-// function newStudents(student: Students){
 Object.defineProperty(exports, "__esModule", { value: true });
-// }
-// console.log(newStudents());
+const Students = [
+    { name: "Alice", marks: 42 },
+    { name: "Bob", marks: 67 },
+    { name: "Charlie", marks: 35 },
+];
+function newStudents(list) {
+    const result = [];
+    for (const student of list) {
+        const status = student.marks >= 50 ? "pass" : "fail";
+        result.push({ name: student.name, status });
+    }
+    return result;
+}
+console.log(newStudents(Students));
 //# sourceMappingURL=task13.js.map

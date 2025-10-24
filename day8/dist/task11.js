@@ -10,5 +10,5 @@ function sum(num1) {
     sum = arr.reduce((a, b) => a + b, 0);
     return sum;
 }
-console.log(sum([[1, 2, 3], [0, 7], [0, 9]]));
+console.log(sum([[1, 2, 3], [0, 7]]));
 //# sourceMappingURL=task11.js.map
