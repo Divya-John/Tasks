@@ -28,6 +28,7 @@ function keys(e) {
   cell.innerHTML = keyName;
   row.appendChild(cell);
   tblBody.appendChild(row);
+  
   if (tblBody.rows.length > 10) {
     tblBody.deleteRow(0);
   }
