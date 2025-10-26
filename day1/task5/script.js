@@ -1,23 +1,37 @@
-const content = document.getElementById("content");
-  fetch  ("https://randomuser.me/api/?results=5")
-  .then(response=>response.json())
-  .then(data =>{
-    data.results.forEach((item) => {
-      let li = document.createElement("li");
-      li.style.listStyle = "none";
-      li.innerHTML = `
-        <p>${item.name.first}</p>
-        <img src="${item.picture.medium}"></img>
-        <p>${item.email}</p>
-      `;
-      content.appendChild(li);
-    });
-    let button=document.createElement('button')
-    button.textContent="shuffle users";
-    document.body.appendChild(button)
+const counter = document.getElementById("count");
+const increments = document.getElementById("increment");
+const decrements = document.getElementById("decrement");
+const displayCount = document.getElementById("resetbtn");
 
-    button.addEventListener("click",function(){
-      window.location.reload();
-    })
-  })
-  .catch(error=>console.error('Error',error))
+let count = 0;
+function reset() {
+  count = 0;
+  counter.textContent = count;
+  background();
+}
+background();
+function increment() {
+  if (count < 10) {
+    count++;
+    counter.textContent = count;
+    bgred();
+    background();
+  }
+}
+function decrement() {
+  if (count > -10) {
+    count--;
+    counter.textContent = count;
+    bggreen();
+    background();
+  }
+}
+function background() {
+  if (count == 0) counter.style.color = "gray";
+}
+function bgred() {
+  if (count > 0) counter.style.color = "Red";
+}
+function bggreen() {
+  if (count < 0) counter.style.color = "green";
+}

@@ -1,5 +1,3 @@
-let n=3;
-
-for(i=1;i<=n*n;i++){
-  console.log(i)
+function spiralMatrix(n){
+  const matrix=Array.from({length:n},()=>Array(n).fill(0))
 }

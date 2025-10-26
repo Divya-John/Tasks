@@ -1,47 +1,39 @@
-// 1
-const array=[1,2,3,4,5];
+// function myMap(array,callback){
+//   let result=[]
+//   for(i=0;i<array.length;i++){
+//     result.push(callback(array[i]))
+//   }
+//   return result
+// }
 
-function multiply() {
-  let result = [];
+// function newArray(n){
+//   return n= n*2
+// }
+// console.log(myMap([1,2,3,4,5], newArray));
+
+// function myFilter(arr, callback) {
+//   let result = [];
+//   for (i = 0; i < arr.length; i++) {
+//     if (callback(arr[i])) {
+//       result.push(arr[i]);
+//     }
+//   }
+//   return result;
+// }
+// function filter(n) {
+//   return n > 10;
+// }
+// console.log(myFilter([2, 3, 4, 97, 45, 32, 12], filter));
+
+function myReduce(array, callback, initialValue = 0) {
+  let result = initialValue;
   for (i = 0; i < array.length; i++) {
-    result[i] = array[i] * 2; 
+    result = callback(result, array[i]);
   }
   return result;
 }
-function myMap(array,callback){
-  return callback(array)
+
+function newArray(n1, n2) {
+  return n1 + n2;
 }
-console.log(myMap(array,multiply));
-
-
-// 2
-// const array = [1, 2, 3, 4, 5];
-// function even() {
-//   let result = [];
-//   for (i = 0; i < array.length; i++) {
-//     if(array[i]%2===0){
-//       result.push(array[i])
-//     }
-//   }
-//   return result
-// }
-
-// function myFilter(array,callback){
-//   return callback(array)
-// }
-// console.log(myFilter(array, even));
-
-
-// 3
-// const array = [1, 2, 3, 4, 5];
-//   function sum() {
-//   let result = 0;
-//   for (i = 0; i < array.length; i++) {
-//     result += array[i]
-//   }
-//   return result
-// }
-// function myReduce(array, callback,initialValue) {
-//   return callback(array);
-// }
-// console.log(myReduce(array, sum));
+console.log(myReduce([1, 2, 3, 4, 5], newArray));

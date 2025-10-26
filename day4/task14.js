@@ -1,25 +1,32 @@
-let n=5;
+function toRoman(num){
+  if(num<0||num>2000){
+    return "Input must be between 1 and 2000"
+  }
+  const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const symbols = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
 
-if(n===1){
-  console.log("I")
+  let result=""
+  for(let i=0;i<values.length;i++){
+     while (num >= values[i]) {
+       num -= values[i];
+       result += symbols[i];
+     }
+  }
+  return result
 }
-else if (n === 5) {
-  console.log("V");
-}
-else if (n === 10) {
-  console.log("X");
-}
-else if (n === 50) {
-  console.log("L");
-}
-else if (n === 100) {
-  console.log("C");
-}
-else if (n === 500) {
-  console.log("D");
-}
-else if (n === 1000) {
-  console.log("M");
-}
-
-
+console.log(toRoman(5));   
+console.log(toRoman(60));   
