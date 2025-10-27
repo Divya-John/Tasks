@@ -1,56 +1,33 @@
-const list = document.getElementById("list");
-const nameInput = document.getElementById("name");
+const listItems = document.getElementById("list");
 const addBtn = document.getElementById("btn");
+const nameAdd = document.getElementById("name");
 const toggleBtn = document.getElementById("toggleBtn");
 
-let showPendingOnly = false;
+let items=JSON.parse(localStorage.getItem("todoList"))||[];
 
-let items = JSON.parse(localStorage.getItem("todoList")) || [];
-
-function renderList() {
-  list.innerHTML = "";
-  items.forEach((item, index) => {
-    if (showPendingOnly && item.done) return; 
-
-    const li = document.createElement("li");
-    li.className = item.done ? "done" : "";
-
-    const span = document.createElement("span");
-    span.textContent = item.text;
-
-    li.addEventListener("click", () => toggleDone(index));
-
-    li.appendChild(span);
-    list.appendChild(li);
-  });
+function renderList(){
+  listItems.innerHTML="";
+  items.forEach((item,index)=>{
+    if(showPenfingOnly&&item.done) return;
+    const newList = document.createElement("li");
+    newList.innerHTML = `
+      <span style="text-decoration:${item.done?"line-through":"none"}">${text.text}</span>
+      <button id="doneBtn">{item.done?"Undo":"Done"}</button>
+    `;
+      listItems.appendChild(newList);
+      const doneBtn = newList.querySelector("button");
+       doneBtn.addEventListener("click",() => (toggleBtn(index)));
+  })
 }
 
 function add() {
-  const text = nameInput.value.trim();
-  if (!text) return;
-
-  items.push({ text, done: false });
-  nameInput.value = "";
-
-  saveAndRender();
+  const text = nameAdd.value;
+  const newList = document.createElement("li");
+  newList.innerHTML = `
+    <span>${text}</span>
+    <button id="doneBtn">Done</button>
+    `;
+  listItems.appendChild(newList);
+  const doneBtn = newList.querySelector("button");
+ 
 }
-
-function toggleDone(index) {
-  items[index].done = !items[index].done;
-  saveAndRender();
-}
-
-toggleBtn.addEventListener("click", () => {
-  showPendingOnly = !showPendingOnly;
-  toggleBtn.textContent = showPendingOnly ? "Show All" : "Show Only Pending";
-  renderList();
-});
-
-function saveAndRender() {
-  localStorage.setItem("todoList", JSON.stringify(items));
-  renderList();
-}
-
-addBtn.addEventListener("click", add);
-
-renderList();

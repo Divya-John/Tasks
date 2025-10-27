@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task7</title>
+</head>
+<style>
+  .tooltip {
+  position: relative;
+  cursor: pointer;
+  }
+ .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+.txt2 p{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100px;
+  text-wrap: nowrap;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  text-overflow: none;
+  overflow: visible;
+}
+</style>
+<body>
+  <h2>List Items</h2>
+  <div>
+    <ul style="list-style: none;">
+
+      <li class="txt2 tooltip">
+        <P>What is Lorem Ipsum</P>
+        <span id="lists" class="tooltiptext">What is Lorem Ipsum</span>
+      </li>
+
+      <li class="txt2 tooltip">
+        <p>Why do we use it</p>
+        <span id="lists" class="tooltiptext">Why do we use it</span>
+      </li>
+
+      <li class="txt2 tooltip">
+        <p>Where does it come from</p>
+        <span id="lists" class="tooltiptext">Where does it come from </span>
+      </li>
+      
+    </ul>
+  </div>
+  <script src="task7.js"></script>
+</body>
+</html>
