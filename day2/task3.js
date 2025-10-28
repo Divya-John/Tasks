@@ -1,10 +1,9 @@
-const arr = [2, 4, 6, 8, 10];
 
 function even(arr){
   const newList = [];
   for(i=0;i<arr.length;i++){
     if(arr[i]%2===0){
-      newList.push(arr[i]);
+      newList.push(arr[i])
     }
   }
   return newList;
