@@ -1,31 +1,34 @@
-
 function studentUpadte(students) {
-  
-  if (!Array.isArray(students)|| students.length===0) return "Invalid Input";
-  const copystudents = [...students];
- 
-  
-  const names = copystudents.map((name) => name.name);
-  for(let i=0;i<names.length;i++){
-    if (typeof names[i]!= "string") return "Invalid";
-    copystudents[i].name=copystudents[i].name.trim();
-    if (names[i]==='') return "Invalid Input";
-  }
 
-  const marks = copystudents.map((name) => name.marks);
-  for (let i = 0; i < marks.length - 1; i++) {
-    if (typeof marks[i] != "number") return "Invalid marks";
-    if(marks[i]<0) return "Mark is negative number";
+  if (!Array.isArray(students) || students.length === 0) return "Invalid Input";
+
+  const copystudents = [...students];
+
+  for (let i = 0; i < copystudents.length; i++) {
+    const student = copystudents[i];
+
+    if (!student || typeof student !== "object") return "Invalid";
+
+    if (student.name === undefined) return "Invalid name";
+    if (typeof student.name !== "string") return "Invalid name";
+
+    student.name = student.name.trim();
+    if (student.name === "") return "Invalid Input";
+
+    if (student.marks === undefined) return "Invalid marks";
+    if (typeof student.marks !== "number") return "Invalid marks";
+    if (student.marks < 0) return "Mark is negative number";
   }
 
   for (const student of copystudents) {
-    student.status=student.marks >= 50?"pass":"fail"
+    student.status = student.marks >= 50 ? "pass" : "fail";
     delete student.marks;
   }
+
   return copystudents;
 }
 
-function testCase(){
+function testCase() {
   const tests = [
     {
       input: [
@@ -156,9 +159,7 @@ function testCase(){
       expected: "Invalid",
     },
     {
-      input: [
-        42, 
-        { name: "Bob", marks: 67 }, { name: "Charlie", marks: 35 }],
+      input: [42, { name: "Bob", marks: 67 }, { name: "Charlie", marks: 35 }],
       expected: "Invalid",
     },
   ];
@@ -174,4 +175,4 @@ function testCase(){
     }
   }
 }
-testCase()
+testCase();
