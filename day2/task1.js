@@ -1,11 +1,10 @@
-
-function primeNumber(n){
-
-  if(typeof n!="number"|| Math.round(n)!==n) return "Invalid";
-  if(n<0) return "Negative number";
-  if(n===0||n===1) return "Not a prime number"
-  for(i=2;i<n-1;i++){
-    if(n%i===0){
+function primeNumber(n) {
+  if (typeof n != "number" || Math.round(n) !== n) return "Invalid";
+  if (n < 0) return "Negative number";
+  if (n === 0 || n === 1) return "Not a prime number";
+  
+  for (i = 2; i < n - 1; i++) {
+    if (n % i === 0) {
       return "Not a prime number";
     }
   }

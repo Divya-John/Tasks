@@ -1,10 +1,9 @@
+function count(str) {
+  let count = "";
 
-function count(str){
-  let count='';
-
-
-  if(typeof str !== "string"|| str.trim()==="") return "Invalid"
-  count=str.trim().split(/\s+/g)
+  if (typeof str !== "string") return "Invalid";
+  if (str.trim() === "") return 0;
+  count = str.trim().split(/\s+/g);
   return count.length;
 }
 
@@ -32,7 +31,7 @@ function testCase() {
     },
     {
       input: "",
-      expected: "Invalid",
+      expected: 0,
     },
     {
       input: {},
@@ -52,7 +51,7 @@ function testCase() {
     },
     {
       input: "  ",
-      expected: "Invalid",
+      expected: 0,
     },
     {
       input: 123,

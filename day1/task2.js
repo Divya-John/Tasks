@@ -1,20 +1,22 @@
-function pattern(str){
-  let result=[]
-  if(typeof str!=="string") {return "Invalid input"};
-  if(str==="") return 'Empty';
-  str = str.trim()
+function pattern(str) {
+  let result = [];
+  if (typeof str !== "string") {
+    return "Invalid input";
+  }
+  if (str === "") return "Empty";
+  str = str.trim();
 
   for (i = 0; i < str.length; i++) {
     result.push(str.slice(0, i + 1));
   }
   for (j = 1; j < str.length; j++) {
-    result.push(str.slice( j));
+    result.push(str.slice(j));
   }
   return result.join("\n");
 }
-pattern("CAT")
+pattern("CAT");
 
-function testCase(){
+function testCase() {
   const tests = [
     {
       input: "CAT",
@@ -77,14 +79,14 @@ function testCase(){
       expected: `K`,
     },
   ];
-  for(let i=0;i<tests.length;i++){
-    const test=tests[i]
+  for (let i = 0; i < tests.length; i++) {
+    const test = tests[i];
     const result = pattern(test.input);
     const passed = result === test.expected;
     console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
     if (!passed) {
       console.log("Expected:", test.expected);
-      console.log("Got:", result);   
+      console.log("Got:", result);
     }
   }
 }

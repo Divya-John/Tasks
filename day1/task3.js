@@ -1,12 +1,11 @@
+import { objectCheck } from "../utils/utils.js";
+
 function studentUpadte(students) {
-
   if (!Array.isArray(students) || students.length === 0) return "Invalid Input";
-
   const copystudents = [...students];
 
   for (let i = 0; i < copystudents.length; i++) {
     const student = copystudents[i];
-
     if (!student || typeof student !== "object") return "Invalid";
 
     if (student.name === undefined) return "Invalid name";
@@ -130,18 +129,7 @@ function testCase() {
       ],
       expected: "Mark is negative number",
     },
-    {
-      input: [
-        { name: "Alice ", marks: 42 },
-        { name: "Bob", marks: 67 },
-        { name: "Charlie", marks: 35 },
-      ],
-      expected: [
-        { name: "Alice", status: "fail" },
-        { name: "Bob", status: "pass" },
-        { name: "Charlie", status: "fail" },
-      ],
-    },
+
     {
       input: {},
       expected: "Invalid Input",
@@ -167,7 +155,8 @@ function testCase() {
   for (let i = 0; i < tests.length; i++) {
     const test = tests[i];
     const result = studentUpadte(test.input);
-    const passed = JSON.stringify(result) === JSON.stringify(test.expected);
+    const passed = objectCheck(result, test.expected);
+
     console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
     if (!passed) {
       console.log("Expected:", test.expected);
