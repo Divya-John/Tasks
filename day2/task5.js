@@ -1,4 +1,4 @@
-// import { objectCheck } from "../utils/utils1.js";
+// import { objectCheck } from "../utils1.js";
 function sortArr(str) {
   if (typeof str !== "string") return "Not a string";
   str = str.replaceAll(/[ ]/g, "").trim();

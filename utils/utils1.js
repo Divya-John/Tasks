@@ -1,5 +1,5 @@
-export function objectCheck(result, expected) {
-let passed=true;
+export function objectCheck(result, expected){
+  let passed;
   if(typeof result!=='string'){
     const resultKey=Object.keys(result);
     const expectKey = Object.keys(expected);
@@ -13,7 +13,7 @@ let passed=true;
         result[resultKey[i]] !== expected[resultKey[i]]
       ) {
         passed = false;
-        break;
+        return;
       } else {
         passed = true;
       }
@@ -29,5 +29,4 @@ let passed=true;
   }
   return passed
 }
-
 objectCheck()

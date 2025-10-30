@@ -1,10 +1,10 @@
-
+import { arrayCheck } from "../utils.js";
 function even(arr){
   if(!Array.isArray(arr)) return "Not a array";
 
   if(arr.length===0) return "Empty";
   const newList = [];
-  for(i=0;i<arr.length;i++){
+  for(let i=0;i<arr.length;i++){
     if(typeof arr[i]==="number"){
       if (arr[i] % 2 === 0) {
         newList.push(arr[i]);
@@ -82,27 +82,7 @@ function testCase() {
     const test = tests[i];
     const result = even(test.input);
     // const passed = result === test.expected;
-    let passed;
-
-    if(Array.isArray(result)){
-      if(result.length===test.expected.length){
-        for(let i=0;i<result.length;i++){
-          if(result[i]===test.expected[i]){
-            passed=true
-          }
-        }
-      }else{
-        passed=false
-      }
-    }
-    else{
-      if(result===test.expected){
-        passed=true
-      }
-      else{
-        passed=false
-      }
-    }
+    const passed = arrayCheck(result, test.expected);
 
     console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
     if (!passed) {
