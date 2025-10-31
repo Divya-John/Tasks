@@ -38,7 +38,7 @@ function testCase() {
       expected: "Empty",
     },
     {
-      input: [[]],
+      input: ["-1", "0", "2.5"],
       expected: "Not a number",
     },
     {

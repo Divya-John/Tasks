@@ -4,8 +4,8 @@ function snakecase(text){
   text = text.replaceAll(/\s+/g, " ").trim();
   if (text.length === 0 || text.trim() === "") return "Empty";
 
-  function tests(match,offset){
-    return(offset>0?"_":"")+match.toLowerCase()
+  function tests(match,offset,str){
+    return(offset>0&&str[offset-1]!==" "?"_":"")+match.toLowerCase()
   }
   
   let newText = text.trim().replaceAll(/[A-Z]/g,tests);
@@ -23,12 +23,20 @@ function testCase() {
       expected: "progr_ammi_ng",
     },
     {
+      input: "programming",
+      expected: "programming",
+    },
+    {
       input: "ProgrAmmiNg offA",
       expected: "progr_ammi_ng off_a",
     },
     {
       input: "myFunction     andAnother",
       expected: "my_function and_another",
+    },
+    {
+      input: "Hello World!",
+      expected: "hello world!",
     },
     {
       input: "Hello, World!",
@@ -67,7 +75,7 @@ function testCase() {
       expected: "Not a sting",
     },
     {
-      input: 0/0,
+      input: 0 / 0,
       expected: "Not a sting",
     },
   ];

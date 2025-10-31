@@ -18,7 +18,6 @@ function anagram(words) {
     obj[sorted].push(word);
   }
   let arr = Object.values(obj);
-
   return arr;
 }
 
