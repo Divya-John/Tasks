@@ -20,12 +20,6 @@ function perSquare(n){
   }
   else return "Not a number"
 }
-// console.log(perSquare(16));
-// console.log(perSquare(10));
-// console.log(perSquare(25));
-
-
-
 
 function testCase() {
   const tests = [

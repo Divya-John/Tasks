@@ -1,4 +1,4 @@
-// import { objectCheck } from "../utils1.js";
+import { objectCheck } from "../utils/utils1.js";
 function sortArr(str) {
   if (typeof str !== "string") return "Not a string";
   str = str.replaceAll(/[ ]/g, "").trim();
@@ -77,38 +77,8 @@ function testCase() {
   for (let i = 0; i < tests.length; i++) {
     const test = tests[i];
     const result = sortArr(test.input);
-    // const passed = result === test.expected;
-    // const passed = objectCheck(result,test.expected);
-    let passed;
-      if(typeof result!=='string'){
-        const resultKey=Object.keys(result);
-        const expectKey = Object.keys(test.expected);
-        if(resultKey.length!==expectKey.length){
-          passed=false;
-          break;
-        }
-        for(let i=0;i<resultKey.length;i++){
-          if (
-            !result.hasOwnProperty(resultKey[i]) ||
-            result[resultKey[i]] !== test.expected[resultKey[i]]
-          ) {
-            passed = false;
-            break;
-          } else {
-            passed = true;
-          }
-        }
-      }
-      else{
-        if(result===test.expected){
-          passed=true;
-        }
-        else{
-          passed=false;
-        }
-      }
-
-      console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
+    const passed = objectCheck(result, test.expected);
+    console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
     if (!passed) {
       console.log("Expected:", test.expected);
       console.log("Got:", result);

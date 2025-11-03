@@ -3,8 +3,6 @@
 // const list = document.querySelectorAll("lists");
 
 
-
-
 // display.addEventListener("mouseover", (e) => { 
 //   newli.textContent = e.target.textContent;
 //   newli.style.overflow = "visible";

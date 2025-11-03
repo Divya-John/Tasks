@@ -1,40 +1,42 @@
-function toRoman(num){
-  if(num<0||num>2000){
-    return "Input must be between 1 and 2000"
+import { arrayCheck } from "../utils.js";
+
+function toRoman(num) {
+  if (typeof num !== "number" || isNaN(num) || !Number.isInteger(num)) {
+    return "Invalid";
+  }
+  if (num <= 0 || num > 2000) {
+    return "Input must be between 1 and 2000";
   }
   const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-  const symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
-
-  let result=""
-  for(let i=0;i<values.length;i++){
+  const symbols = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+  
+  let result = "";
+  for (let i = 0; i < values.length; i++) {
     while (num >= values[i]) {
       num -= values[i];
       result += symbols[i];
     }
   }
-  return result
+  return result;
 }
-console.log(toRoman(5));   
-console.log(toRoman(60));
-
 
 function testCase() {
   const tests = [
     {
       input: 29,
-      expected: " XXIX",
+      expected: "XXIX",
     },
     {
       input: 13,
-      expected: " XIII",
+      expected: "XIII",
     },
     {
       input: 2,
-      expected: "prime number",
+      expected: "II",
     },
     {
       input: 4,
-      expected: "Not a prime number",
+      expected: "IV",
     },
     {
       input: null,
@@ -42,7 +44,7 @@ function testCase() {
     },
     {
       input: 0,
-      expected: "Not a prime number",
+      expected: "Input must be between 1 and 2000",
     },
     {
       input: undefined,
@@ -54,15 +56,15 @@ function testCase() {
     },
     {
       input: 100,
-      expected: "Not a prime number",
+      expected: "C",
     },
     {
       input: 1,
-      expected: "Not a prime number",
+      expected: "I",
     },
     {
       input: -24,
-      expected: "Negative number",
+      expected: "Input must be between 1 and 2000",
     },
     {
       input: {},
@@ -77,10 +79,6 @@ function testCase() {
       expected: "Invalid",
     },
     {
-      input: 7,
-      expected: "prime number",
-    },
-    {
       input: 7.1,
       expected: "Invalid",
     },
@@ -88,7 +86,7 @@ function testCase() {
   for (let i = 0; i < tests.length; i++) {
     const test = tests[i];
     const result = toRoman(test.input);
-    const passed = result === test.expected;
+    const passed = arrayCheck(result, test.expected);
     console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
     if (!passed) {
       console.log("Expected:", test.expected);

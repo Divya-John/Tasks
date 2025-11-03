@@ -37,5 +37,3 @@ export function objectCheck(result, expected) {
   return passed
 }
 objectCheck();
-
-

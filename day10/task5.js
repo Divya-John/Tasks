@@ -16,4 +16,4 @@ function countdown(targetDate) {
     console.log(`${days}d ${hours}h ${minutes}m ${seconds}s`);
   }, 1000);
 }
-countdown("2025-10-26");
+countdown("2025-11-4");

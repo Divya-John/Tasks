@@ -14,10 +14,9 @@ export function objectCheck(result, expected){
       ) {
         passed = false;
         return;
-      } else {
-        passed = true;
-      }
+      } 
     }
+    return true
   }
   else{
     if(result===expected){
@@ -29,4 +28,3 @@ export function objectCheck(result, expected){
   }
   return passed
 }
-objectCheck()
