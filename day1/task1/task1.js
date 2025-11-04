@@ -1,5 +1,7 @@
 import { arrayCheck } from "../../utils.js";
 function myMap(array,callback){
+  if (!Array.isArray(array)) return "Invalid input";
+  array = array.filter((arr) => typeof arr === "number");
   let result=[]
   for(let i=0;i<array.length;i++){
     result.push(callback(array[i]))
@@ -48,6 +50,46 @@ function testCase() {
       input: [1, , 3, 4, 5],
       callback: (n) => n % 2,
       expected: [1, 1, 0, 1],
+    },
+    {
+      input: [1, "", "3", 4, 5],
+      callback: (n) => n + 2,
+      expected: [3, 6, 7],
+    },
+    {
+      input: ["", "", ""],
+      callback: (n) => n + 2,
+      expected: [],
+    },
+    {
+      input: [true, 8, 4],
+      callback: (n) => n + 2,
+      expected: [10, 6],
+    },
+    {
+      input: null,
+      callback: (n) => n + 2,
+      expected: "Invalid input",
+    },
+    {
+      input: undefined,
+      callback: (n) => n + 2,
+      expected: "Invalid input",
+    },
+    {
+      input: {},
+      callback: (n) => n + 2,
+      expected: "Invalid input",
+    },
+    {
+      input: 123,
+      callback: (n) => n + 2,
+      expected: "Invalid input",
+    },
+    {
+      input: 0/0,
+      callback: (n) => n + 2,
+      expected: "Invalid input",
     },
   ];
   for (let i = 0; i < tests.length; i++) {
