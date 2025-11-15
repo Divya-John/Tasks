@@ -95,4 +95,4 @@ function testCase() {
     }
 }
 testCase();
-//# sourceMappingURL=hello.js.map
+//# sourceMappingURL=task1.js.map

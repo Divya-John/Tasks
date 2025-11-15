@@ -1,28 +1,21 @@
 function SortBySum(arr: number[][]) {
   if (!Array.isArray(arr)) return "Invalid input";
-  let arr1 = [];
-  let result = [];
+ let arr1 = [];
+ let result = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    const sum = arr[i].reduce((acc: number, curr: number) => acc + curr, 0);
-    arr1.push(sum);
+ for (let i = 0; i < arr.length; i++) {
+   const sum = arr[i].reduce((acc: number, curr: number) => acc + curr, 0);
+   arr1.push({ sum: sum, index: i });
   }
+   
+  arr1.sort((a, b) => b.sum - a.sum);
 
-  let re = [...arr1];
-  let arr2 = arr1.sort((a, b) => b - a);
-  for (let i = 0; i < arr2.length; i++) {
-    for (let j = 0; j < re.length; j++) {
-      if (arr2[i] === re[j]) {
-        result.push(arr[j]);
-        break;
-      }
-    }
-  }
-  return result;
+ for (let i = 0; i < arr1.length; i++) {
+   result.push(arr[arr1[i].index]);
+ }
+
+ return result;
 }
-
-// console.log(SortBySum([[2, 2, 2], [3, 3], [1, 1, 1, 1, 1, 1], [-1]]));
-// console.log(SortBySum([[1, 2, 3], [3],[1,2],[1, 1, 1, 1, 1, 1],[-1]]));
 
 function testCase() {
   const tests = [
@@ -41,6 +34,10 @@ function testCase() {
     {
       input: [[-1, 2, -3], [-4], [2, 7]],
       expected: [[2, 7], [-1, 2, -3], [-4]],
+    },
+    {
+      input: [[2, 2, 2], [3, 3], [1, 1, 1, 1, 1, 1], [-1]],
+      expected: [[2, 2, 2], [3, 3], [1, 1, 1, 1, 1, 1], [-1]],
     },
     {
       input: [
