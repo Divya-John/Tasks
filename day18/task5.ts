@@ -1,0 +1,88 @@
+function SortBySum(arr: number[][]) {
+  if (!Array.isArray(arr)) return "Invalid input";
+ let arr1 = [];
+ let result = [];
+
+ for (let i = 0; i < arr.length; i++) {
+   const sum = arr[i].reduce((acc: number, curr: number) => acc + curr, 0);
+   arr1.push({ sum: sum, index: i });
+  }
+   
+  arr1.sort((a, b) => b.sum - a.sum);
+
+ for (let i = 0; i < arr1.length; i++) {
+   result.push(arr[arr1[i].index]);
+ }
+
+ return result;
+}
+
+function testCase() {
+  const tests = [
+    {
+      input: [[1, 2, 3], [4], [2, 7]],
+      expected: [[2, 7], [1, 2, 3], [4]],
+    },
+    {
+      input: [[1, 2, 3], [4], [2, 0], [2, 7]],
+      expected: [[2, 7], [1, 2, 3], [4], [2, 0]],
+    },
+    {
+      input: [[-1, -2, -3], [4], [2, 7]],
+      expected: [[2, 7], [4], [-1, -2, -3]],
+    },
+    {
+      input: [[-1, 2, -3], [-4], [2, 7]],
+      expected: [[2, 7], [-1, 2, -3], [-4]],
+    },
+    {
+      input: [[2, 2, 2], [3, 3], [1, 1, 1, 1, 1, 1], [-1]],
+      expected: [[2, 2, 2], [3, 3], [1, 1, 1, 1, 1, 1], [-1]],
+    },
+    {
+      input: [
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+        [1, 2, 3, 4, 5],
+      ],
+      expected: [
+        [1, 2, 3, 4, 5],
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+        [1, 2, 3, 4],
+      ],
+    },
+    {
+      input: [],
+      expected: [],
+    },
+    {
+      input: {},
+      expected: "Invalid input",
+    },
+    {
+      input: true,
+      expected: "Invalid input",
+    },
+    {
+      input: null,
+      expected: "Invalid input",
+    },
+    {
+      input: undefined,
+      expected: "Invalid input",
+    },
+  ];
+  for (let i = 0; i < tests.length; i++) {
+    const test = tests[i];
+    const result = SortBySum(test.input);
+    let passed = JSON.stringify(result) === JSON.stringify(test.expected);
+    console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
+    if (!passed) {
+      console.log("Expected:", test.expected);
+      console.log("Got:", result);
+    }
+  }
+}
+testCase();

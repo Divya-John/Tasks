@@ -1,6 +1,10 @@
 function Once(){
+  let executed=false;
   return function(){
-    console.log("Initialized");
+    if(!executed){
+      executed=true
+      console.log("Initialized");
+    }
   }
 }
 const initialize = Once() 

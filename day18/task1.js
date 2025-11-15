@@ -1,15 +1,15 @@
-function Partition(array, fn) {
-  if (!Array.isArray(array)) return "Invalid input";
-  let result1 = [];
-  let result2 = [];
-  let result = [];
-  for (let i = 0; i < array.length; i++) {
-    if (fn(array[i])) result1.push(array[i]);
-    else result2.push(array[i]);
+function num(n) {
+  let arr = [];
+  for (i = 1; i <= n; i++) {
+    arr.push(i);
   }
-  result.push(result1, result2);
-  return result;
+  arr = arr.map((x) => Math.pow(x, x));
+
+  const sum = arr.reduce((acc, curr) => acc + curr, 0);
+  // console.log(sum)
+
+  let result = sum % 10000000000;
+  console.log(result);
 }
-console.log(
-  Partition([1, "1", "2", 2, 3, 4, "4"], (x) => typeof x === "string")
-);
+
+console.log(num(10));
