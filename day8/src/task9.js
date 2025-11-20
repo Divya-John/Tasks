@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function anagram(str1, str2) {
     const re1 = str1.split("").sort();
     const re2 = str2.split("").sort();
@@ -13,4 +11,5 @@ function anagram(str1, str2) {
 console.log(anagram("listen", "silent"));
 console.log(anagram("restful", "fluster"));
 console.log(anagram("hello", "world"));
+export {};
 //# sourceMappingURL=task9.js.map

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const Students = [
     { name: "Alice", marks: 42 },
     { name: "Bob", marks: 67 },
@@ -14,4 +12,5 @@ function newStudents(list) {
     return result;
 }
 console.log(newStudents(Students));
+export {};
 //# sourceMappingURL=task13.js.map

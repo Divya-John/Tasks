@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const product1 = {
     id: 1,
     name: "T-shirt",
@@ -16,4 +14,5 @@ function display(product1) {
     console.log(`Product ${product1.id}:${product1.name} costs:${product1.price}`);
 }
 display(product1);
+export {};
 //# sourceMappingURL=task5.js.map

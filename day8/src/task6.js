@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var Direction;
 (function (Direction) {
     Direction["Up"] = "Up";
@@ -11,4 +9,5 @@ function direction(direction) {
     console.log(`You moved ${direction}!`);
 }
 direction(Direction.Up);
+export {};
 //# sourceMappingURL=task6.js.map
