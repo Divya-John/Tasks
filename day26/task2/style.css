@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: grid;
+  gap: 5px;
+  grid-template-columns:repeat(4, 1fr);
+}
+.header h1 {
+  padding: 20px;
+}

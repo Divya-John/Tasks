@@ -8,13 +8,28 @@ const images = [
   "imgs/image2.png",
 ];
 let currentImage = 0;
+const stylediv=document.createElement("div")
 const image = document.createElement("img");
 image.style.padding = "20px";
+image.style.animationName="slid";
+image.style.animationDuration="1.5s";
 function newImg() {
   image.src = images[currentImage];
 }
 container.appendChild(image);
+document.body.appendChild(container)
 
+
+/*
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+} */
 // image.addEventListener("mouseover", (event) => {
 //   newImg()
 // });
@@ -37,3 +52,5 @@ function next() {
 }
 setInterval(next,3000)
 newImg();
+
+

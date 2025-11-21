@@ -62,7 +62,5 @@ fetchAPIData();
 addEventListener("scrollend", next);
 function next() {
     pageno++;
-    var newp = document.createElement("p");
-    newp.innerHTML = "Loading";
     fetchAPIData(pageno);
 }
