@@ -1,0 +1,34 @@
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#container {
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+    flex-shrink: 0;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slider img {
+  width: 500px;
+  height: 300px;
+  flex-shrink: 0;
+}
+button {
+  background-color: white;
+  padding: 10px;
+  border: none;
+}
+button img{
+  height: 60px;
+  width: 60px;
+}
+.img2{
+  transform: rotate(180deg);
+}
