@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  display: flex;
+  background: #000;
+  padding: 10px 20px;
+  list-style: none;
+  justify-content: space-between;
+}
+.contents {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.item {
+  position: relative;
+  padding: 15px 25px;
+  color: white;
+}
+.item:hover {
+  background-color: #2a2727;
+}
+#dropdown {
+  position: absolute;
+  background: rgb(223, 223, 233);
+  color: black;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+}
+#dropdown1 {
+  position: absolute;
+  background: rgb(223, 223, 233);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#dropdown2 {
+  position: absolute;
+  background: rgb(223, 223, 233);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#dropdown3 {
+  position: absolute;
+  background: rgb(223, 223, 233);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input ,button{
+  margin: 20px;
+  padding: 10px;
+}
+.profile {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+ul div{
+  display: flex;
+}
