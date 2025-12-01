@@ -1,4 +1,7 @@
-export function parse(str) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parse = parse;
+function parse(str) {
     if (typeof str !== "string")
         return "Invalid input";
     if (!str.includes("=") && !str.includes("&") || str.includes("&&"))

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function anagram(words) {
     let wordsGroup = {};
     for (const word of words) {
@@ -11,5 +13,4 @@ function anagram(words) {
     return result;
 }
 console.log(anagram(["care", "race", "acre", "dog", "god", "cat"]));
-export {};
 //# sourceMappingURL=task14.js.map

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function sum(num1) {
     let sum = 0;
     let arr = [];
@@ -9,5 +11,4 @@ function sum(num1) {
     return sum;
 }
 console.log(sum([[1, 2, 3], [0, 7]]));
-export {};
 //# sourceMappingURL=task11.js.map

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function Partition(array, fn) {
     if (!Array.isArray(array))
         return "Invalid input";
@@ -93,5 +95,4 @@ function testCase() {
     }
 }
 testCase();
-export {};
 //# sourceMappingURL=hello.js.map

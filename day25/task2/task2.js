@@ -1,40 +1,33 @@
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var container = document.getElementById("container");
-var prevBtn = document.getElementById("prev");
-var nextBtn = document.getElementById("next");
-var originalImages = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const container = document.getElementById("container");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const originalImages = [
     "imgs/image4.png",
     "imgs/image1.png",
     "imgs/image2.png",
 ];
-var images = __spreadArray(__spreadArray([
-    originalImages[originalImages.length - 1]
-], originalImages, true), [
+const images = [
+    originalImages[originalImages.length - 1],
+    ...originalImages,
     originalImages[0],
-], false);
-var currentImage = 1;
-var interval;
-var isAnimating = false;
-var divcontainer = document.createElement("div");
+];
+let currentImage = 1;
+let interval;
+let isAnimating = false;
+let divcontainer = document.createElement("div");
 divcontainer.className = "slider";
 divcontainer.style.flexShrink = "0";
 container.appendChild(divcontainer);
-images.forEach(function (item) {
-    var image = document.createElement("img");
+images.forEach((item) => {
+    const image = document.createElement("img");
     image.src = item;
     divcontainer.appendChild(image);
 });
 function newImg() {
     divcontainer.style.transition = "transform 0.5s ease-in-out";
-    divcontainer.style.transform = "translateX(-".concat(currentImage * 500, "px)");
+    divcontainer.style.transform = `translateX(-${currentImage * 500}px)`;
 }
 function prevs() {
     if (isAnimating)
@@ -53,17 +46,17 @@ function next() {
     currentImage++;
     newImg();
 }
-divcontainer.addEventListener("transitionend", function () {
+divcontainer.addEventListener("transitionend", () => {
     isAnimating = false;
     if (currentImage === images.length - 1) {
         divcontainer.style.transition = "none";
         currentImage = 1;
-        divcontainer.style.transform = "translateX(-".concat(currentImage * 500, "px)");
+        divcontainer.style.transform = `translateX(-${currentImage * 500}px)`;
     }
     if (currentImage === 0) {
         divcontainer.style.transition = "none";
         currentImage = originalImages.length;
-        divcontainer.style.transform = "translateX(-".concat(currentImage * 500, "px)");
+        divcontainer.style.transform = `translateX(-${currentImage * 500}px)`;
     }
 });
 newImg();
@@ -84,3 +77,4 @@ if (nextBtn) {
 if (prevBtn) {
     prevBtn.addEventListener("click", prevs);
 }
+//# sourceMappingURL=task2.js.map

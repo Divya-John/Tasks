@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var task2_ts_1 = require("./task2.ts");
-var utils_ts_1 = require("../utils.ts");
+const task2_ts_1 = require("../task2/task2.ts");
+const utils_ts_1 = require("../utils.ts");
 function testCase() {
-    var tests = [
+    const tests = [
         {
             input: [1, 2, 2, 3, 3, 3, 4],
             expected: 3,
@@ -25,11 +25,11 @@ function testCase() {
             expected: 10,
         },
     ];
-    for (var i = 0; i < tests.length; i++) {
-        var test = tests[i];
-        var result = (0, task2_ts_1.frequent)(test.input);
-        var passed = (0, utils_ts_1.arrayCheck)(result, test.expected);
-        console.log("Test ".concat(i + 1, ":"), passed ? "Pass" : "Fail");
+    for (let i = 0; i < tests.length; i++) {
+        const test = tests[i];
+        const result = (0, task2_ts_1.frequent)(test.input);
+        const passed = (0, utils_ts_1.arrayCheck)(result, test.expected);
+        console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
         if (!passed) {
             console.log("Expected:", test.expected);
             console.log("Got:", result);
@@ -37,3 +37,4 @@ function testCase() {
     }
 }
 testCase();
+//# sourceMappingURL=task2test.js.map

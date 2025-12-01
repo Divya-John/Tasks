@@ -1,4 +1,7 @@
-export function rotate(matrix) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.rotate = rotate;
+function rotate(matrix) {
     if (!Array.isArray(matrix))
         return "Invalid input";
     if (matrix.length === 0)

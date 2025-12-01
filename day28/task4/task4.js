@@ -9,3 +9,4 @@ function camelCase(str) {
         return str.toUpperCase();
     }
 }
+//# sourceMappingURL=task4.js.map

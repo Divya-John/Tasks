@@ -1,4 +1,7 @@
-export function intersections(arr1, arr2) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.intersections = intersections;
+function intersections(arr1, arr2) {
     let result = [];
     if (arr1.length === 0 || arr2.length === 0)
         return "Invalid input";

@@ -1,4 +1,6 @@
-import { intersections } from "./task4.ts";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const task4_ts_1 = require("./task4.ts");
 function testCase() {
     const tests = [
         {
@@ -54,7 +56,7 @@ function testCase() {
     ];
     for (let i = 0; i < tests.length; i++) {
         let test = tests[i];
-        let result = intersections(test.input1, test.input2);
+        let result = (0, task4_ts_1.intersections)(test.input1, test.input2);
         let passed = JSON.stringify(result) === JSON.stringify(test.output);
         console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
         if (!passed) {

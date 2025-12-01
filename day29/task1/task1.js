@@ -24,18 +24,13 @@ function AnalyzeHeatmap(heatmap) {
             }
         }
     }
-    let value = [max, min, avg, hottestPoint, coldestPoint];
-    let key = [
-        "maxTemp",
-        "minTemp",
-        "averageTemp",
-        "hottestPoint",
-        "coldestPoint",
-    ];
-    Object.keys = key;
-    Object.values = value;
-    console.log(Object.keys);
-    console.log(Object.values);
+    return {
+        maxTemp: max,
+        minTemp: min,
+        averageTemp: avg,
+        hottestPoint: hottestPoint,
+        coldestPoint: coldestPoint,
+    };
 }
 console.log(AnalyzeHeatmap([
     [30, 32, 35],

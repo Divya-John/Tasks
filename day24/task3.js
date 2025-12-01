@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function separator(n) {
     n = n.toString();
     let result = [];
@@ -13,5 +15,4 @@ function separator(n) {
     }
 }
 console.log(separator(1234567));
-export {};
 //# sourceMappingURL=task3.js.map

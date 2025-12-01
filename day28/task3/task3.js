@@ -4,14 +4,15 @@ exports.armstorng = armstorng;
 function armstorng(n) {
     if (n < 0)
         return "Not a armstrong";
-    var numsplit = n.toString().split("");
-    var result = [];
-    for (var i = 0; i < numsplit.length; i++) {
+    let numsplit = n.toString().split("");
+    let result = [];
+    for (let i = 0; i < numsplit.length; i++) {
         if (numsplit[i]) {
-            result.push(Math.pow(numsplit[i], numsplit.length));
+            result.push(numsplit[i] ** numsplit.length);
         }
     }
-    var sum = result.reduce(function (acc, curr) { return acc + curr; });
-    var armstorng = (n === sum) ? true : false;
+    const sum = result.reduce((acc, curr) => acc + curr);
+    let armstorng = (n === sum) ? true : false;
     return armstorng;
 }
+//# sourceMappingURL=task3.js.map

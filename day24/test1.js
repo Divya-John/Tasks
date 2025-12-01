@@ -1,4 +1,6 @@
-import { rotate } from "./task1.ts";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const task1_ts_1 = require("./task1.ts");
 function testCase() {
     const tests = [
         {
@@ -65,7 +67,7 @@ function testCase() {
     ];
     for (let i = 0; i < tests.length; i++) {
         let test = tests[i];
-        let result = rotate(test.input);
+        let result = (0, task1_ts_1.rotate)(test.input);
         let passed = JSON.stringify(result) === JSON.stringify(test.output);
         console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
         if (!passed) {

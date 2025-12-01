@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function prime(n) {
     if (n < 1)
         return false;
@@ -11,5 +13,4 @@ function prime(n) {
 console.log(prime(7));
 console.log(prime(10));
 console.log(prime(29));
-export {};
 //# sourceMappingURL=task7.js.map

@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var task3_ts_1 = require("../task3/task3.ts");
+const task3_ts_1 = require("../task3/task3.ts");
 function testCase() {
-    var tests = [
+    const tests = [
         {
             input: 153,
             expected: true,
@@ -28,11 +28,11 @@ function testCase() {
             expected: "Not a armstrong",
         },
     ];
-    for (var i = 0; i < tests.length; i++) {
-        var test = tests[i];
-        var result = (0, task3_ts_1.armstorng)(test.input);
-        var passed = result === test.expected;
-        console.log("Test ".concat(i + 1, ":"), passed ? "Pass" : "Fail");
+    for (let i = 0; i < tests.length; i++) {
+        const test = tests[i];
+        const result = (0, task3_ts_1.armstorng)(test.input);
+        const passed = result === test.expected;
+        console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
         if (!passed) {
             console.log("Expected:", test.expected);
             console.log("Got:", result);
@@ -40,3 +40,4 @@ function testCase() {
     }
 }
 testCase();
+//# sourceMappingURL=task3test.js.map

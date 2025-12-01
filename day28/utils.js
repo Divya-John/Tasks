@@ -2,14 +2,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.arrayCheck = arrayCheck;
 function arrayCheck(result, expected) {
-    var passed;
+    let passed;
     if (Array.isArray(result)) {
         if (result.length !== expected.length) {
             passed = false;
         }
         else {
             passed = true;
-            for (var i = 0; i < result.length; i++) {
+            for (let i = 0; i < result.length; i++) {
                 if (result[i] !== expected[i]) {
                     passed = false;
                     break;
@@ -28,3 +28,4 @@ function arrayCheck(result, expected) {
     return passed;
 }
 arrayCheck();
+//# sourceMappingURL=utils.js.map

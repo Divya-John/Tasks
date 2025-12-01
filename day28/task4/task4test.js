@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var task4_ts_1 = require("./task4.ts");
+const task4_ts_1 = require("../task4/task4.ts");
 function testCase() {
-    var tests = [
+    const tests = [
         {
             input: "hello_world_from_js",
             expected: "helloWorldFromJs",
@@ -24,11 +24,11 @@ function testCase() {
             expected: "Empty",
         },
     ];
-    for (var i = 0; i < tests.length; i++) {
-        var test = tests[i];
-        var result = (0, task4_ts_1.camelCase)(test.input);
-        var passed = result === test.expected;
-        console.log("Test ".concat(i + 1, ":"), passed ? "Pass" : "Fail");
+    for (let i = 0; i < tests.length; i++) {
+        const test = tests[i];
+        const result = (0, task4_ts_1.camelCase)(test.input);
+        const passed = result === test.expected;
+        console.log(`Test ${i + 1}:`, passed ? "Pass" : `Fail`);
         if (!passed) {
             console.log("Expected:", test.expected);
             console.log("Got:", result);
@@ -36,3 +36,4 @@ function testCase() {
     }
 }
 testCase();
+//# sourceMappingURL=task4test.js.map

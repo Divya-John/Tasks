@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function frequency(str) {
     const newStr = str.split("").join("").toString().toLowerCase();
     let count = {};
@@ -7,5 +9,4 @@ function frequency(str) {
     return count;
 }
 console.log(frequency("hello"));
-export {};
 //# sourceMappingURL=task10.js.map
