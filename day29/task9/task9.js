@@ -1,20 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function objects(a, b) {
-  let keya = Object.keys(a);
-  let valuesa = Object.values(a);
-
-  let keyb = Object.keys(b);
-  let valuesb = Object.values(b);
-
-  console.log(keya);
-  console.log(keyb);
-let result=[]
-  for(let i=0;i<keya.length;i++){
-    for(let j=0;j<keyb.length;j++){
-      if(keya[i]===keyb[j]){
-        result.push(keya[i])
-      }
+    const changed = {};
+    const added = {};
+    const removed = [];
+    for (let key in a) {
+        if (!(key in b)) {
+            removed.push(key);
+        }
+        else if (a[key] !== b[key]) {
+            changed[key] = [a[key], b[key]];
+        }
     }
-  }
-  console.log(result)
+    for (let key in b) {
+        if (!(key in a)) {
+            added[key] = b[key];
+        }
+    }
+    return { changed, added, removed };
 }
 console.log(objects({ x: 1, y: 2, z: 3 }, { x: 1, y: 4, w: 5 }));
+//# sourceMappingURL=task9.js.map
